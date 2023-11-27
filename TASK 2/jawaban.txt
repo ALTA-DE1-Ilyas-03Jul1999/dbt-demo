@@ -1,0 +1,28 @@
+with stg_order_detail as(
+ select
+  orders.order_date 
+  , order_details.quantity as quantity_aja
+  , order_details.price as price
+  , brands."name" as brand_name
+  , products."name" as product_name
+ from orders
+ left join order_details
+  on orders.order_id = order_details.order_id
+ left join products
+  on order_details.product_id = products.product_id
+ left join brands
+  on products.brand_id = brands.brand_id 
+)
+, fct_per_brand_daily_sales as (
+ select
+  date(order_date) as "order_date"
+  , product_name
+  , brand_name as "brand_name"
+  , sum(quantity_aja) as qty_sold
+  , sum (quantity_aja*price) as "revenue"
+ from stg_order_detail
+ group by 1, 2, 3
+)
+select
+ *
+from fct_per_brand_daily_sales

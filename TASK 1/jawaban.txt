@@ -1,0 +1,6 @@
+1. DBT adalah Data Build Tool yang merupakan open source untuk manajemen transformasi data pada dunia penyimpanan data. fungsinya dapat mengeksekusi secara teroganisir dengan menyusun logika seperti menggunakan macros sehingga dapat konsisten dan mendapakatkan dokumentasi proses yang baik.
+
+2. keuntungannya dapat membuat struktur pengelolaan transformasi data dengan jelas secara terdokumentasi. terdapat dbt run dan dbt tes untuk pengujian schema.
+
+3. dependency tree adalah sebuah hubungan atau relasi yang memiliki sifat ketergantungan antara model-model.
+versioning adalah penggunaan sistem kontrol seperti repo git untuk melacak perubahan. ini yang dimaksud juga dokumentasi
